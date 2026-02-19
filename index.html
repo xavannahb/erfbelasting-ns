@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Erfbelastingformulier</h1>
+        <p>Dit is een school project!</p>
+    </header>
+    <main>
+        <form>
+        <!-- 1 Gegevens van de overledene -->
+            <fieldset>
+
+            <legend>1 Gegevens van de overledene</legend>
+                <!-- 1a gegevens overledene -->
+                <fieldset>
+                    <legend>1a</legend>
+
+                        <label for="voornaam_overledene">Voornaam</label>
+                            <input type="text" id="voornaam_overledene"> 
+
+                        <label for="tussenvoegsel_overledene">Tussenvoegsel</label>
+                            <input type="text" id="tussenvoegsel_overledene"> 
+                        
+                        <label for="achternaam_overledene">Achternaam</label>
+                            <input type="text" id="achternaam_overledene"> 
+                        
+                        <label for="bsn_overledene">Bsn overledene</label>
+                            <input type="text" id="bsn_overledene"> 
+
+                        <label for="geboortedatum_overledene">Geboortedatum overledene</label>
+                            <input type="date" id="geboortedatum_overledene"> 
+
+                </fieldset>
+                
+
+                <!-- 1b huwelijk overledene -->
+                <fieldset>
+                    <legend>1b</legend>
+
+                        <fieldset>
+                            <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                            <label for="partner_overledene_nee">
+                                <input type="radio" name="partner_overledene" value="nee" id="partner_overledene_nee"> Nee</label>
+
+                            <label for="partner_overledene_ja">
+                                <input type="radio" name="partner_overledene" value="ja" id="partner_overledene_ja"> Ja</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                            <label for="huwelijk_overledene_nee">
+                                <input type="radio" name="huwelijk_overledene" value="nee" id="huwelijk_overledene_nee"> Nee</label>
+                                
+                            <label for="huwelijk_overledene_ja">
+                                <input type="radio" name="huwelijk_overledene" value="ja" id="huwelijk_overledene_ja"> Ja</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Hadden de overledene en diens partner een finaalerrekenbeding?</legend>
+                            <label for="finaalerrekenbeding_overledene_nee">
+                                <input type="radio" name="finaalerrekenbeding_overledene" value="nee" id="finaalerrekenbeding_overledene_nee"> Nee</label>
+                                
+                            <label for="finaalerrekenbeding_overledene_ja">
+                                <input type="radio" name="finaalerrekenbeding_overledene" value="ja" id="finaalerrekenbeding_overledene_ja"> Ja</label>
+                        </fieldset>
+
+                        <label for="datum-huwelijk_overledene">Datum huwelijkse of partnerschapsvoorwaarden</label>
+                            <input type="date" name="datum-huwelijk_overledene" id="datum-huwelijk_overledene">  
+
+                </fieldset>
+
+                <!-- 1c kinderen overledene -->
+                <fieldset>
+                    <legend>1c</legend>
+
+                        <fieldset>
+                            <legend>Had de overledene kinderen?</legend>
+                            <label for="kinderen_overledene_nee">
+                                <input type="radio" name="kinderen_overledene" value="nee" id="kinderen_overledene_nee"> Nee</label>
+
+                            <label for="kinderen_overledene_ja">
+                                <input type="radio" name="kinderen_overledene" value="ja" id="kinderen_overledene_ja"> Ja</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
+                            <label for="kinderen_eerder_overleden_nee">
+                                <input type="radio" name="kinderen_eerder_overleden" value="nee" id="kinderen_eerder_overleden_nee"> Nee</label>
+                                
+                            <label for="kinderen_eerder_overleden_ja">
+                                <input type="radio" name="kinderen_eerder_overleden" value="ja" id="kinderen_eerder_overleden_ja"> Ja</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Had dit overleden kind zelf kinderen?</legend>
+                            <label for="kinderen_overleden_kind_nee">
+                                <input type="radio" name="kinderen_overleden_kind" value="nee" id="kinderen_overleden_kind_nee"> Nee</label>
+                                
+                            <label for="kinderen_overleden_kind_ja">
+                                <input type="radio" name="kinderen_overleden_kind" value="ja" id="kinderen_overleden_kind_ja"> Ja</label>
+                        </fieldset>
+
+                </fieldset>
+
+                <!-- 1d testament overledene -->
+                <fieldset>
+                    <legend>1d</legend>
+
+                        <fieldset>
+                            <legend>Had de overledene een testament?</legend>
+                            <label for="testament_overledene_nee">
+                                <input type="radio" name="testament_overledene" value="nee" id="testament_overledene_nee">Nee</label>
+
+                            <label for="testament_overledene_ja">
+                                <input type="radio" name="testament_overledene" value="ja" id="testament_overledene_ja">Ja</label>
+                        </fieldset>
+
+                        <label for="protocolnummer_notaris">Protocolnummer notaris</label>
+                            <input type="number" id="protocolnummer_notaris">
+
+                        <label for="voornaam_notaris">Voornaam</label>
+                            <input type="text" id="voornaam_notaris"> 
+
+                        <label for="tussenvoegsel_notaris">Tussenvoegsel</label>
+                            <input type="text" id="tussenvoegsel_notaris"> 
+                        
+                        <label for="achternaam_notaris">Achternaam</label>
+                            <input type="text" id="achternaam_notaris">
+                        
+                        <label for="vestigingsplaats_notaris">Vestigingsplaats</label>
+                            <input type="text" id="vestigingsplaats_notaris"> 
+                        
+                        <label for="datum_testament">Datum van het testament of van de laatste wijziging</label>
+                            <input type="date" id="datum_testament"> 
+
+                </fieldset>
+
+            </fieldset>
+
+
+
+
+
+        <!-- 2 Gegevens gemachtigde --> 
+            <fieldset>
+
+            <legend>2 Gegevens gemachtigde</legend>
+                <!-- 2a bsn gemachtigde notaris -->
+                <fieldset>
+                    <legend>2a</legend>
+
+                        <label for="bsn_gemachtigde">Bsn/RSIN gemachtigde</label>
+                            <input type="number" id="bsn_gemachtigde"> 
+
+                        <label for="beconnummer_gemachtigde">Beconnummer adviseur</label>
+                            <input type="number" id="beconnummer_gemachtigde"> 
+                        
+                        <label for="protocolnummer_notaris_gemachtigde">Protocolnummer notaris</label>
+                            <input type="number" id="protocolnummer_notaris_gemachtigde"> 
+
+                </fieldset>
+                
+
+                <!-- 2b persoonsgegevens gemachtigde notarise -->
+                <fieldset>
+                    <legend>2b</legend>
+
+                        <label for="voornaam_gemachtigde">Voornaam</label>
+                            <input type="text" id="voornaam_gemachtigde"> 
+
+                        <label for="tussenvoegsel_gemachtigde">Tussenvoegsel</label>
+                            <input type="text" id="tussenvoegsel_gemachtigde"> 
+                        
+                        <label for="achternaam_gemachtigde">Achternaam</label>
+                            <input type="text" id="achternaam_gemachtigde">  
+                        
+                        <label for="naaminstelling_gemachtigde">Naam instelling</label>
+                            <input type="text" id="naaminstelling_gemachtigde"> 
+
+                        <fieldset>
+                            <legend>Adres in Nederland</legend>
+                            
+                                <label for="straatnaam_gemachtigde">Straatnaam</label>
+                                    <input type="text" id="straatnaam_gemachtigde"> 
+
+                                <label for="huisnummer_gemachtigde">Huisnummer</label>
+                                    <input type="number" id="huisnummer_gemachtigde">
+
+                                <label for="toevoeging_gemachtigde">Toevoeging</label>
+                                    <input type="text" id="toevoeging_gemachtigde"> 
+
+                                <label for="postcode_gemachtigde">Postcode</label>
+                                    <input type="number" id="postcode_gemachtigde"> 
+
+                                <label for="woonplaats_gemachtigde">Woonplaats</label>
+                                    <input type="text" id="woonplaats_gemachtigde"> 
+
+                        </fieldset>
+
+                        <label for="telefoon_gemachtigde">Telefoonnummer</label>
+                            <input type="tel" id="telefoon_gemachtigde">  
+                        
+                        <label for="email_gemachtigde">Email</label>
+                            <input type="email" id="email_gemachtigde"> 
+
+                </fieldset>
+
+            </fieldset>
+
+        </form>
+    </main>
+    <footer>Copyright 2026</footer>
+</body>
+</html>
