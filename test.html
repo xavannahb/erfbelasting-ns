@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erfbelasting Aangifte 2026</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-checked.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="styletest.css">
 </head>
 <body>
     <header>
@@ -35,7 +34,7 @@
                         <legend>Vul hier de gegevens in van de overledene.</legend>
                         <div class="form-grid">
                             <div class="form-input">
-                            <label for="voornaam_overledene">Voornaam *</label>
+                            <label for="voornaam_overledene">Voornaam</label>
                                 <input type="text" id="voornaam_overledene" placeholder="Jan" required> 
                             </div>
 
@@ -45,17 +44,17 @@
                             </div>
 
                             <div class="form-input">    
-                            <label for="achternaam_overledene">Achternaam *</label>
+                            <label for="achternaam_overledene">Achternaam</label>
                                 <input type="text" id="achternaam_overledene" placeholder="Jong" required> 
                             </div>
 
                             <div class="form-input">
-                            <label for="bsn_overledene">Bsn overledene *</label>
+                            <label for="bsn_overledene">Bsn overledene</label>
                                 <input type="text" id="bsn_overledene" placeholder="123456789" pattern="[0-9]{9}" required> 
                             </div>
 
                             <div class="form-input">            
-                            <label for="geboortedatum_overledene">Geboortedatum overledene *</label>
+                            <label for="geboortedatum_overledene">Geboortedatum overledene</label>
                                 <input type="date" id="geboortedatum_overledene" required> 
                             </div>
 
@@ -122,9 +121,10 @@
                     <!-- 1c kinderen overledene -->
                     <fieldset class="outer-section-fieldset">
                         <legend>1c Gegevens van de overledene</legend>
-
+                        <fieldset class="inner-section-fieldset">
+                            <legend>Vul hier de gegevens in over de kinderen van de overledene.</legend>
                             <div class="form-grid">
-                                <div class="form-input">
+                                <div class="form-input vraag5" >
                                     <fieldset class="in-form">
                                         <legend>Had de overledene kinderen?</legend>
                                         <label for="kinderen_overledene_nee">
@@ -134,7 +134,7 @@
                                             <input type="radio" name="kinderen_overledene" value="ja" id="kinderen_overledene_ja"> Ja</label>
                                     </fieldset>
                                 </div>
-                                <div class="form-input">
+                                <div class="form-input vraag6">
                                     <fieldset class="in-form">
                                         <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
                                         <label for="kinderen_eerder_overleden_nee">
@@ -144,7 +144,7 @@
                                             <input type="radio" name="kinderen_eerder_overleden" value="ja" id="kinderen_eerder_overleden_ja"> Ja</label>
                                     </fieldset>
                                 </div>
-                                <div class="form-input">
+                                <div class="form-input vraag7">
                                     <fieldset class="in-form">
                                         <legend>Had dit overleden kind zelf kinderen?</legend>
                                         <label for="kinderen_overleden_kind_nee">
@@ -154,47 +154,69 @@
                                             <input type="radio" name="kinderen_overleden_kind" value="ja" id="kinderen_overleden_kind_ja"> Ja</label>
                                     </fieldset>
                                 </div>
+                            </div>
 
                                 <a href="#stap2" class="volgende-knop" id="vorige-knop-3">Vorige</a>
                                 <a href="#stap4" class="volgende-knop" id="volgende-knop-3">Volgende</a>
-
+                        </fieldset>
                     </fieldset>
                 </div>
 
+                <div id="stap4" class="vierde-blok-vragen">
                 <!-- 1d testament overledene -->
-                <!-- <fieldset>
-                    <legend>1d</legend>
+                        <fieldset class="outer-section-fieldset">
+                            <legend>1d Gegevens van de overledene</legend>
+                                <fieldset class="inner-section-fieldset">
+                                    <legend>Vul hier de gegevens in over het testament van de overledene.</legend>
+                                <div class="form-grid">
+                                    <div class="form-input vraag8">
+                                        <fieldset class="in-form">
+                                            <legend>Had de overledene een testament?</legend>
+                                            <label for="testament_overledene_nee">
+                                                <input type="radio" name="testament_overledene" value="nee" id="testament_overledene_nee">Nee</label>
 
-                        <fieldset>
-                            <legend>Had de overledene een testament?</legend>
-                            <label for="testament_overledene_nee">
-                                <input type="radio" name="testament_overledene" value="nee" id="testament_overledene_nee">Nee</label>
+                                            <label for="testament_overledene_ja">
+                                                <input type="radio" name="testament_overledene" value="ja" id="testament_overledene_ja">Ja</label>
+                                        </fieldset>
+                                    </div>
 
-                            <label for="testament_overledene_ja">
-                                <input type="radio" name="testament_overledene" value="ja" id="testament_overledene_ja">Ja</label>
+                                    <div class="form-input vraag9">
+                                        <label for="protocolnummer_notaris">Protocolnummer notaris</label>
+                                            <input type="number" id="protocolnummer_notaris" required>
+                                    </div>
+
+                                    <div class="form-input vraag10">
+                                        <label for="voornaam_notaris">Voornaam</label>
+                                            <input type="text" id="voornaam_notaris" required> 
+                                    </div>
+
+                                    <div class="form-input vraag11">
+                                        <label for="tussenvoegsel_notaris">Tussenvoegsel</label>
+                                            <input type="text" id="tussenvoegsel_notaris"> 
+                                    </div>
+
+                                    <div class="form-input vraag12">
+                                        <label for="achternaam_notaris">Achternaam</label>
+                                            <input type="text" id="achternaam_notaris" required>
+                                    </div>
+
+                                    <div class="form-input vraag13">
+                                        <label for="vestigingsplaats_notaris">Vestigingsplaats</label>
+                                            <input type="text" id="vestigingsplaats_notaris" required> 
+                                    </div>
+
+                                    <div class="form-input vraag14">
+                                        <label for="datum_testament">Datum van het testament of van de laatste wijziging</label>
+                                            <input type="date" id="datum_testament" required> 
+                                    </div>
+                                </div>
+                                <a href="#stap3" class="volgende-knop" id="vorige-knop-4">Vorige</a>
+                                <a href="#stap5" class="volgende-knop" id="volgende-knop-4">Volgende</a>
+                                
                         </fieldset>
-
-                        <label for="protocolnummer_notaris">Protocolnummer notaris</label>
-                            <input type="number" id="protocolnummer_notaris">
-
-                        <label for="voornaam_notaris">Voornaam</label>
-                            <input type="text" id="voornaam_notaris"> 
-
-                        <label for="tussenvoegsel_notaris">Tussenvoegsel</label>
-                            <input type="text" id="tussenvoegsel_notaris"> 
-                        
-                        <label for="achternaam_notaris">Achternaam</label>
-                            <input type="text" id="achternaam_notaris">
-                        
-                        <label for="vestigingsplaats_notaris">Vestigingsplaats</label>
-                            <input type="text" id="vestigingsplaats_notaris"> 
-                        
-                        <label for="datum_testament">Datum van het testament of van de laatste wijziging</label>
-                            <input type="date" id="datum_testament"> 
-
-                </fieldset>
-
-            </fieldset> -->
+                    </fieldset>
+                </div>
+            <!-- </fieldset> -->
 
 
 
