@@ -26,7 +26,6 @@ body {
 header {
     background: var(--ns-blauw);
     padding: 1rem;
-    
 }
 
 ul.header {
@@ -61,7 +60,7 @@ ul.navigatie {
     margin: 0 auto;
 }
 
-li {
+ul.navigatie li {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -161,6 +160,141 @@ fieldset.in-form legend{
     cursor: pointer;
     width: fit-content;
     text-decoration: none;
+}
+
+
+/* Functies */
+
+/* alleen volgende knoppen standaard verbergen */
+#volgende-knop-1,
+#volgende-knop-2,
+#volgende-knop-3,
+#volgende-knop-4 {
+    display: none;
+}
+
+/* vorige knoppen altijd zichtbaar */
+#vorige-knop-2,
+#vorige-knop-3,
+#vorige-knop-4 {
+    display: inline-block;
+}
+
+/* standaard alleen stap 1 zichtbaar */
+.tweede-blok-vragen,
+.derde-blok-vragen,
+.vierde-blok-vragen {
+    display: none;
+}
+
+/* STAP 1 */
+form:has(#voornaam_overledene:valid):has(#achternaam_overledene:valid):has(#bsn_overledene:valid):has(#geboortedatum_overledene:valid) #volgende-knop-1 {
+    display: inline-block;
+}
+
+#stap2:target {
+    display: block;
+}
+
+form:has(#stap2:target) .eerste-blok-vragen {
+    display: none;
+}
+
+/* STAP 2 */
+.vraag2,
+.vraag3,
+.vraag4 {
+    display: none;
+}
+
+.vraag1:has(input[value="ja"]:checked) + .vraag2 {
+    display: block;
+}
+
+.vraag2:has(input[value="ja"]:checked) + .vraag3 {
+    display: block;
+}
+
+.vraag3:has(input[value="ja"]:checked) + .vraag4 {
+    display: block;
+}
+
+form:has(.vraag1 input[value="ja"]:checked):has(.vraag2 input[value="ja"]:checked):has(.vraag3 input[value="ja"]:checked):has(#datum-huwelijk_overledene:valid) #volgende-knop-2,
+form:has(.vraag1 input[value="ja"]:checked):has(.vraag2 input[value="ja"]:checked):has(.vraag3 input[value="ja"]:checked):has(#datum-huwelijk_overledene:valid) #vorige-knop-2 {
+    display: inline-block;
+}
+
+#stap3:target {
+    display: block;
+}
+
+form:has(#stap3:target) .eerste-blok-vragen,
+form:has(#stap3:target) .tweede-blok-vragen {
+    display: none;
+}
+
+/* STAP 3 */
+.vraag6,
+.vraag7 {
+    display: none;
+}
+
+.vraag5:has(input[value="ja"]:checked) + .vraag6 {
+    display: block;
+}
+
+.vraag6:has(input[value="ja"]:checked) + .vraag7 {
+    display: block;
+}
+
+form:has(.vraag5 input[value="ja"]:checked):has(.vraag6 input[value="ja"]:checked):has(.vraag7 input[value="ja"]:checked) #volgende-knop-3,
+form:has(.vraag5 input[value="ja"]:checked):has(.vraag6 input[value="ja"]:checked):has(.vraag7 input[value="ja"]:checked) #vorige-knop-3 {
+    display: inline-block;
+}
+
+#stap4:target {
+    display: block;
+}
+
+form:has(#stap4:target) .eerste-blok-vragen,
+form:has(#stap4:target) .tweede-blok-vragen,
+form:has(#stap4:target) .derde-blok-vragen {
+    display: none;
+}
+
+/* STAP 4 */
+.vraag9,
+.vraag10,
+.vraag11,
+.vraag12,
+.vraag13,
+.vraag14 {
+    display: none;
+}
+
+/* toon alle testament-vragen wanneer "ja" is gekozen */
+.vraag8:has(input[value="ja"]:checked) + .vraag9,
+.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10,
+.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11,
+.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11 + .vraag12,
+.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11 + .vraag12 + .vraag13,
+.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11 + .vraag12 + .vraag13 + .vraag14 {
+    display: block;
+}
+
+form:has(#protocolnummer_notaris:valid):has(#voornaam_notaris:valid):has(#achternaam_notaris:valid):has(#vestigingsplaats_notaris:valid) #volgende-knop-4 {
+    display: inline-block;
+}
+
+#stap5:target {
+    display: block;
+}
+
+form:has(#stap5:target) .eerste-blok-vragen,
+form:has(#stap5:target) .tweede-blok-vragen,
+form:has(#stap5:target) .derde-blok-vragen,
+form:has(#stap5:target) .vierde-blok-vragen {
+    display: none;
 }
 
 

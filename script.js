@@ -1,63 +1,59 @@
-const form = document.getElementById('wizardForm');
-const steps = Array.from(form.querySelectorAll('[data-step]'));
-const progressEl = document.getElementById('progress');
+const links = document.querySelectorAll('.navigatie a');
 
-let current = 0;
-
-function showStep(index) {
-    steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
-    current = index;
-    progressEl.textContent = `Stap ${current + 1} van ${steps.length}`;
-    // focus eerste input in stap
-    const first = steps[current].querySelector('input, select, textarea, button');
-    if (first) first.focus({ preventScroll: true });
-}
-
-function validateCurrentStep() {
-    const step = steps[current];
-    const fields = Array.from(step.querySelectorAll('input, select, textarea'));
-
-    // reset custom validity (voor toekomstige uitbreidingen)
-    fields.forEach(f => f.setCustomValidity?.(''));
-
-    // Check alleen zichtbare & enabled velden
-    const invalid = fields.find(el => !el.disabled && el.willValidate && !el.checkValidity());
-
-    if (invalid) {
-    // Laat browser “bubble” melding zien
-    invalid.reportValidity();
-        return false;
-        }
-        return true;
-}
-
-form.addEventListener('click', (e) => {
-    const nextBtn = e.target.closest('[data-next]');
-    const prevBtn = e.target.closest('[data-prev]');
-
-    if (nextBtn) {
-        if (!validateCurrentStep()) return;
-        if (current < steps.length - 1) showStep(current + 1);
-    }
-
-      if (prevBtn) {
-        if (current > 0) showStep(current - 1);
-      }
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
 });
 
-form.addEventListener('submit', (e) => {
-      // laatste stap ook valideren
-      if (!validateCurrentStep()) {
-        e.preventDefault();
-        return;
-      }
+// // Chat gpt 
+// const form = document.getElementById("overlijden-form");
+// const bsnInput = document.getElementById("bsn_overledene");
 
-      e.preventDefault();
-      const data = new FormData(form);
-      const obj = Object.fromEntries(data.entries());
-      console.log('Form data:', obj);
-      alert('Formulier is “verstuurd” (check console voor data).');
-      // Hier zou je fetch() kunnen doen naar je backend.
-});
+// bsnInput.addEventListener("input", () => {
+//     if (bsnInput.validity.patternMismatch) {
+//         bsnInput.setCustomValidity("BSN moet precies 9 cijfers bevatten.");
+//     } else {
+//         bsnInput.setCustomValidity("");
+//     }
+// });
 
-showStep(0);
+// function validateStep(stepId, nextHash) {
+//     const step = document.getElementById(stepId);
+//     const fields = step.querySelectorAll("input");
+
+//     for (const field of fields) {
+//         if (!field.checkValidity()) {
+//             field.reportValidity();
+//             return;
+//         }
+//     }
+
+//     window.location.hash = nextHash;
+// }
+
+// document.getElementById("volgende-knop-1").addEventListener("click", (e) => {
+//     e.preventDefault();
+//     validateStep("stap1", "stap2");
+// });
+
+// document.getElementById("volgende-knop-2").addEventListener("click", (e) => {
+//     e.preventDefault();
+//     validateStep("stap2", "stap3");
+// });
+
+// document.getElementById("volgende-knop-3").addEventListener("click", (e) => {
+//     e.preventDefault();
+//     validateStep("stap3", "stap4");
+// });
+
+// form.addEventListener("submit", (e) => {
+//     if (!form.checkValidity()) {
+//         e.preventDefault();
+//         form.reportValidity();
+//     } else {
+//         e.preventDefault();
+//         alert("Formulier is geldig en zou nu verzonden worden.");
+//     }
+// });

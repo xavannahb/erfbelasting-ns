@@ -95,39 +95,34 @@ ul .hide-text {
     font-weight: 500;
 }
 
-/* If active */
-.navigatie li a.active .number {
-    background: var(--ns-blauw);
-    color: var(--text-licht);
-    border: none;
-}
+/* Form Styling */
 
-.navigatie li a.active .hide-text {
-    color: var(--ns-blauw);
-}
-
-/* Formulier opmaak */
-
-form {
+form, fieldset.extravragen2, fieldset.extravragen3, fieldset.extravragen4 {
     border: var(--border);
     border-radius: 30px;
     padding: 1rem;
     margin: 1rem;
 }
 
-fieldset.outer-section-fieldset, fieldset.inner-section-fieldset, fieldset.in-form, fieldset.extravragen {
+fieldset.outer-section-fieldset, fieldset.inner-section-fieldset, fieldset.in-form {
     border: none;
     padding: 0;
-}
-
-fieldset.inner-section-fieldset {
-    margin-top: 1em;
 }
 
 fieldset.outer-section-fieldset legend {
     color: var(--ns-blauw);
     font-weight: 600; 
     font-size: clamp(1.10rem, calc(1.048rem + 0.262vw), 1.38rem);  
+}
+
+fieldset.inner-section-fieldset {
+    margin-top: 1em;
+}
+
+fieldset.inner-section-fieldset, fieldset.extravragen4 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 fieldset.inner-section-fieldset legend{
@@ -137,17 +132,8 @@ fieldset.inner-section-fieldset legend{
     padding-bottom: 1rem;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.form-input, fieldset.in-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    grid-column: 1 / -1;
+fieldset.extravragen2 legend, fieldset.extravragen3 legend, fieldset.extravragen4 legend {
+    padding-bottom: 0;
 }
 
 fieldset.inner-section-fieldset label, fieldset.in-form legend {
@@ -213,8 +199,7 @@ form:has(#testament_overledene_ja:checked) .extravragen4 {
     flex-direction: column;
     gap: 1rem;
     grid-column: 1 / -1;
-} 
-
+}
 /* responsive */
 @media (width > 1000px) {
     header {
