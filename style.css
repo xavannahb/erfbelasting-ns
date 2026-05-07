@@ -4,23 +4,29 @@
     --ns-geel: #FFC917;
 
     --text-licht: #FFFFFF;
+    --text-grijs: #a7a7a7;
     --text-donker: #2c2828;
 
     --border-kleur: #e5e7eb;
-    --achtergond-navigatie: #F0F0F0;
+    --achtergond-navigatie: #ffffff;
 
     /* Randen */
     --border: 1.5px solid var(--border-kleur);
 }
 
-
+/* Main styling */
 body {
     margin: 0;
     font-family: system-ui, Arial, sans-serif; 
-    font-size: clamp(0.88rem, calc(0.833rem + 0.208vw), 1.09rem); /* gemaakt met font clamp generator */
-    color: var(--text-donker);
 }
 
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
 
 /* Header */
 header {
@@ -28,26 +34,31 @@ header {
     padding: 1rem;
 }
 
-ul.header {
+header ul {
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 0;
 }
 
-img {
+header img {
     width: 50px;
     height: 50px;
 }
 
-h1 {
+header h1 {
     color: var(--text-licht);
     margin: 0;
     font-size: clamp(1.80rem, calc(1.714rem + 0.429vw), 2.25rem); /* gemaakt met font clamp generator */
 }
 
+/* Navigatie */
 .achtergrond-navigatie {
     border-bottom: var(--border);
+    position: sticky;
+    background-color: var(--achtergond-navigatie);
+    top: 0;
+    z-index: 1000; 
 }
 
 ul.navigatie {
@@ -60,7 +71,7 @@ ul.navigatie {
     margin: 0 auto;
 }
 
-ul.navigatie li {
+ul.navigatie li a {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -70,8 +81,8 @@ ul .number {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: var(--ns-blauw);
-    color: var(--text-licht);
+    color: var(--text-grijs);
+    border: var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,20 +91,20 @@ ul .number {
 
 ul .hide-text {
     text-indent: -9999px;
-    color: var(--ns-blauw);
+    color: var(--text-grijs);
     font-weight: 500;
 }
 
+/* Form Styling */
 
-/* Forms */
-form {
+form, fieldset.extravragen2, fieldset.extravragen3, fieldset.extravragen4 {
     border: var(--border);
     border-radius: 30px;
     padding: 1rem;
-    margin: 1rem;;
+    margin: 1rem;
 }
 
-fieldset.outer-section-fieldset {
+fieldset.outer-section-fieldset, fieldset.inner-section-fieldset, fieldset.in-form {
     border: none;
     padding: 0;
 }
@@ -102,13 +113,16 @@ fieldset.outer-section-fieldset legend {
     color: var(--ns-blauw);
     font-weight: 600; 
     font-size: clamp(1.10rem, calc(1.048rem + 0.262vw), 1.38rem);  
-    padding-bottom: 1rem;
 }
 
 fieldset.inner-section-fieldset {
-    border: none;
-    margin-bottom: 1rem;
-    padding: 0;
+    margin-top: 1em;
+}
+
+fieldset.inner-section-fieldset, fieldset.extravragen4 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 fieldset.inner-section-fieldset legend{
@@ -118,17 +132,14 @@ fieldset.inner-section-fieldset legend{
     padding-bottom: 1rem;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+fieldset.extravragen2 legend, fieldset.extravragen3 legend, fieldset.extravragen4 legend {
+    padding-bottom: 0;
 }
 
-.form-input {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    grid-column: 1 / -1;
+fieldset.inner-section-fieldset label, fieldset.in-form legend {
+    font-size: clamp(0.88rem, calc(0.833rem + 0.208vw), 1.09rem); /* gemaakt met font clamp generator */
+    color: var(--text-donker);
+    font-weight: 400;
 }
 
 fieldset.inner-section-fieldset input {
@@ -137,178 +148,60 @@ fieldset.inner-section-fieldset input {
     padding: 1rem;
 }
 
-fieldset.in-form {
-    border: none;
-    margin-bottom: 1rem;
-    padding: 0;
-}
-
-fieldset.in-form legend{
-    color: var(--text-donker);
-    font-size: clamp(0.88rem, calc(0.833rem + 0.208vw), 1.09rem);
-    font-weight: 400;
-    padding-bottom: 0;
-}
-
-.volgende-knop {
-    display: none;
-    margin-top: 1rem;
+button {
+    /* display: none; */
     padding: 0.75rem 1rem;
-    background: #003082;
-    color: white;
+    background: var(--ns-blauw);
+    border: none;
+    color: #ffffff;
     border-radius: 6px;
     cursor: pointer;
     width: fit-content;
-    text-decoration: none;
 }
 
+/* FUNCTIES STAPPEN */
 
-/* Functies */
-
-/* alleen volgende knoppen standaard verbergen */
-#volgende-knop-1,
-#volgende-knop-2,
-#volgende-knop-3,
-#volgende-knop-4 {
+.extravragen2 {
     display: none;
 }
 
-/* vorige knoppen altijd zichtbaar */
-#vorige-knop-2,
-#vorige-knop-3,
-#vorige-knop-4 {
-    display: inline-block;
-}
-
-/* standaard alleen stap 1 zichtbaar */
-.tweede-blok-vragen,
-.derde-blok-vragen,
-.vierde-blok-vragen {
-    display: none;
-}
-
-/* STAP 1 */
-form:has(#voornaam_overledene:valid):has(#achternaam_overledene:valid):has(#bsn_overledene:valid):has(#geboortedatum_overledene:valid) #volgende-knop-1 {
-    display: inline-block;
-}
-
-#stap2:target {
+form:has(#partner_overledene_ja:checked) .extravragen2 {
     display: block;
-}
-
-form:has(#stap2:target) .eerste-blok-vragen {
-    display: none;
-}
-
-/* STAP 2 */
-.vraag2,
-.vraag3,
-.vraag4 {
-    display: none;
-}
-
-.vraag1:has(input[value="ja"]:checked) + .vraag2 {
-    display: block;
-}
-
-.vraag2:has(input[value="ja"]:checked) + .vraag3 {
-    display: block;
-}
-
-.vraag3:has(input[value="ja"]:checked) + .vraag4 {
-    display: block;
-}
-
-form:has(.vraag1 input[value="ja"]:checked):has(.vraag2 input[value="ja"]:checked):has(.vraag3 input[value="ja"]:checked):has(#datum-huwelijk_overledene:valid) #volgende-knop-2,
-form:has(.vraag1 input[value="ja"]:checked):has(.vraag2 input[value="ja"]:checked):has(.vraag3 input[value="ja"]:checked):has(#datum-huwelijk_overledene:valid) #vorige-knop-2 {
-    display: inline-block;
-}
-
-#stap3:target {
-    display: block;
-}
-
-form:has(#stap3:target) .eerste-blok-vragen,
-form:has(#stap3:target) .tweede-blok-vragen {
-    display: none;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: 1 / -1;
+} 
 
 /* STAP 3 */
-.vraag6,
-.vraag7 {
+
+.extravragen3 {
     display: none;
 }
 
-.vraag5:has(input[value="ja"]:checked) + .vraag6 {
+form:has(#kinderen_overledene_ja:checked) .extravragen3 {
     display: block;
-}
-
-.vraag6:has(input[value="ja"]:checked) + .vraag7 {
-    display: block;
-}
-
-form:has(.vraag5 input[value="ja"]:checked):has(.vraag6 input[value="ja"]:checked):has(.vraag7 input[value="ja"]:checked) #volgende-knop-3,
-form:has(.vraag5 input[value="ja"]:checked):has(.vraag6 input[value="ja"]:checked):has(.vraag7 input[value="ja"]:checked) #vorige-knop-3 {
-    display: inline-block;
-}
-
-#stap4:target {
-    display: block;
-}
-
-form:has(#stap4:target) .eerste-blok-vragen,
-form:has(#stap4:target) .tweede-blok-vragen,
-form:has(#stap4:target) .derde-blok-vragen {
-    display: none;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: 1 / -1;
+} 
 
 /* STAP 4 */
-.vraag9,
-.vraag10,
-.vraag11,
-.vraag12,
-.vraag13,
-.vraag14 {
+
+.extravragen4 {
     display: none;
 }
 
-/* toon alle testament-vragen wanneer "ja" is gekozen */
-.vraag8:has(input[value="ja"]:checked) + .vraag9,
-.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10,
-.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11,
-.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11 + .vraag12,
-.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11 + .vraag12 + .vraag13,
-.vraag8:has(input[value="ja"]:checked) + .vraag9 + .vraag10 + .vraag11 + .vraag12 + .vraag13 + .vraag14 {
+form:has(#testament_overledene_ja:checked) .extravragen4 {
     display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: 1 / -1;
 }
 
-form:has(#protocolnummer_notaris:valid):has(#voornaam_notaris:valid):has(#achternaam_notaris:valid):has(#vestigingsplaats_notaris:valid) #volgende-knop-4 {
-    display: inline-block;
-}
-
-#stap5:target {
-    display: block;
-}
-
-form:has(#stap5:target) .eerste-blok-vragen,
-form:has(#stap5:target) .tweede-blok-vragen,
-form:has(#stap5:target) .derde-blok-vragen,
-form:has(#stap5:target) .vierde-blok-vragen {
-    display: none;
-}
-
-
-
-/* Footer */
-
-footer {
-    background: var(--ns-blauw);
-    color: var(--text-licht);
-    text-align: center;
-    padding: 1rem;
-}
-
-
+/* responsive */
 @media (width > 1000px) {
     header {
         padding: 1.5rem;

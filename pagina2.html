@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfbelasting Aangifte</title>
+    <link rel="stylesheet" href="style-test.css">
+</head>
+<body>
+    <header>
+        <ul class="header">
+        <li><img src="train-svgrepo-com.svg" alt="Logo" class="logo"></li>
+        <li><h1>Erfbelasting Aangifte 2026</h1></li>
+        </ul>
+    </header>
+    <main>
+        <div class="achtergrond-navigatie">
+            <ul class="navigatie">
+                <li><a href="index.html"><div class="number">1</div><div class="hide-text">Gegevens van de overledene</div></a></li>
+                <li><a href="pagina2.html" class="active"><div class="number">2</div><div class="hide-text">Gegevens van de gemachtigde</div></a></li>
+                <li><a href="pagina3.html"><div class="number">3</div><div class="hide-text">Voor wie doet u aangifte?</div></a></li>
+                <li><a href="pagina4.html"><div class="number">4</div><div class="hide-text">Gegevens verkrijgers</div></a></li>
+            </ul>
+        </div>
+        <form action="pagina3.html">
+            <!-- 2 Gegevens gemachtigde --> 
+                <h2>2 Gegevens gemachtigde</h2>
+                <p class="sectie-omschrijving">Vul de gegevens van de gemachtigde in. De gemachtigde is degene die namens 1 of meerdere personen en/of instellingen aangifte doet.</p>
+                    <!-- 2a bsn gemachtigde notaris -->
+
+                        <fieldset class="inner-section-fieldset">
+                            <legend>2a Bsn/RSIN gemachtigde notaris</legend>
+                            <!-- <p class="sectie-omschrijving">Kies een 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.</p> -->
+
+                            <fieldset class="in-form">
+                                <legend>Kies een 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.</legend>
+                                <label><input type="radio" name="rol" id="rol_bsn"> BSN/RSIN gemachtigde</label>
+                                <label><input type="radio" name="rol" id="rol_becon"> Beconnummer adviseur</label>
+                                <label><input type="radio" name="rol" id="rol_protocol"> Protocolnummer notaris</label>
+                            </fieldset>
+
+                            <div class="input-block" id="blok_bsn">
+                                <label for="bsn_gemachtigde">BSN/RSIN gemachtigde *</label>
+                                <input type="number" id="bsn_gemachtigde">
+                            </div>
+
+                            <div class="input-block" id="blok_becon">
+                                <label for="beconnummer_gemachtigde">Beconnummer adviseur *</label>
+                                <input type="number" id="beconnummer_gemachtigde">
+                            </div>
+
+                            <div class="input-block" id="blok_protocol">
+                                <label for="protocolnummer_notaris_gemachtigde">Protocolnummer notaris *</label>
+                                <input type="number" id="protocolnummer_notaris_gemachtigde">
+                            </div>
+                        </fieldset>
+
+                    </fieldset>
+
+                    <!-- 2b persoonsgegevens gemachtigde notarise -->
+                    <fieldset class="inner-section-fieldset">
+                        <legend>2b Persoonsgegevens gemachtigde notarise</legend>
+
+                        <div class="naam-gemachtigde">
+                        <label for="voornaam_gemachtigde">Voornaam *</label>
+                        <input type="text" id="voornaam_gemachtigde" required> 
+
+                        <label for="tussenvoegsel_gemachtigde">Tussenvoegsel</label>
+                        <input type="text" id="tussenvoegsel_gemachtigde"> 
+
+                        <label for="achternaam_gemachtigde">Achternaam *</label>
+                        <input type="text" id="achternaam_gemachtigde" required> 
+                        </div>
+
+                        <label for="naaminstelling_gemachtigde">Naam instelling</label>
+                        <input type="text" id="naaminstelling_gemachtigde" required>
+
+                        <fieldset class="in-form">
+                                <legend>Waar is het adres van de instelling?</legend>
+                                <label><input type="radio" name="adres" id="adres_nl"> Adres in Nederland</label>
+                                <label><input type="radio" name="adres" id="adres_buitenland"> Adres in het buitenland</label>
+                        </fieldset>
+
+                        <fieldset class="extravragen4">
+                            <legend>Adres in Nederland</legend>
+                                
+                            <label for="straatnaam_gemachtigde_nl">Straatnaam</label>
+                            <input type="text" id="straatnaam_gemachtigde_nl"> 
+
+                            <label for="huisnummer_gemachtigde_nl">Huisnummer</label>
+                            <input type="number" id="huisnummer_gemachtigde_nl">
+
+                            <label for="toevoeging_gemachtigde_nl">Toevoeging</label>
+                            <input type="text" id="toevoeging_gemachtigde_nl"> 
+
+                            <label for="postcode_gemachtigde_nl">Postcode</label>
+                            <input type="number" id="postcode_gemachtigde_nl"> 
+
+                            <label for="woonplaats_gemachtigde_nl">Woonplaats</label>
+                            <input type="text" id="woonplaats_gemachtigde_nl"> 
+                        </fieldset>
+
+                        <fieldset class="extravragen5">
+                            <legend>Adres in het buitenland</legend>
+                                
+                            <label for="straatnaam_gemachtigde_buitenland">Straatnaam</label>
+                            <input type="text" id="straatnaam_gemachtigde_buitenland"> 
+
+                            <label for="huisnummer_gemachtigde_buitenland">Huisnummer</label>
+                            <input type="number" id="huisnummer_gemachtigde_buitenland">
+
+                            <label for="postcode_gemachtigde_buitenland">Postcode</label>
+                            <input type="number" id="postcode_gemachtigde_buitenland"> 
+
+                            <label for="woonplaats_gemachtigde_buitenland">Landcode</label>
+                            <input type="text" id="woonplaats_gemachtigde_buitenland" maxlength="3"> 
+                        </fieldset>
+
+                        <p class="sectie-omschrijving">Het invullen van een telefoonnummer of e-mailadres is niet verplicht, maar wel handig. Dan kunnen wij u makkelijker vragen stellen of uitleg geven.</p>
+
+                        <label for="telefoon_gemachtigde">Telefoonnummer</label>
+                        <input type="tel" id="telefoon_gemachtigde">  
+                            
+                        <label for="email_gemachtigde">Email</label>
+                        <input type="email" id="email_gemachtigde"> 
+                    </fieldset>
+                
+                <button>Volgende</button>
+        </form>
+    </main>
+    <footer>Xavannah Baars | CMD | Hogeschool van Amsterdam</footer>
+</body>
+</html>
