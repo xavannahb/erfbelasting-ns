@@ -5,7 +5,7 @@
 ### Wat heb ik gedaan?
 
 In de eerste week ben ik begonnen met het opzetten van het project. Ik heb een GitHub-repository aangemaakt en de basis website opgezet. Daarna ben ik uitgebreid gaan experimenteren met HTML formulieren. Welke invoertypes bestaan er? Hoe werkt validatie in de browser? Welke semantische elementen zijn beschikbaar?
-Ik heb veel tijd besteed aan het experimenteren met HTML elementen zoals <fieldset>, <legend>, <label>. En welke input types er allemaal zijn en wat voor waarde die met zich mee geven. Voorbeeld is type="number" en type="tel" werken alleen voor getallen. Met "type="date" krijg je automatisch een datum prikker. Met "type="radio" kan je je een veld maken waar maar een antwoord aangekruist kan worden. Bij "type="checkbox" zijn er meerdere. Ik vond dit best leuk om hier allemaal mee te experimenteren. 
+Ik heb veel tijd besteed aan het experimenteren met HTML elementen zoals fieldset, legend, label. En welke input types er allemaal zijn en wat voor waarde die met zich mee geven. Voorbeeld is type="number" en type="tel" werken alleen voor getallen. Met "type="date" krijg je automatisch een datum prikker. Met "type="radio" kan je je een veld maken waar maar een antwoord aangekruist kan worden. Bij "type="checkbox" zijn er meerdere. Ik vond dit best leuk om hier allemaal mee te experimenteren. 
 
 ### Wat heb ik geleerd?
 
