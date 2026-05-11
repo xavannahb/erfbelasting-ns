@@ -68,3 +68,12 @@ Wat het meeste belangrijk was voor de herkansing was de gebruiksvriendelijkheid.
 Ik heb ook geleerd hoe je verschillende states in CSS en HTML kunt combineren om de ervaring van de gebruiker te verbeteren. Met :focus, :valid, :invalid en :user-invalid zorg je ervoor dat er dus feedback word gegeven op de gebruiker en het uiteindelijk ze dus makkelijker maakt om het formulier in te vullen. 
 
 Door te meer te focussen op progressive enhancement heb ik geleerd hoeveel je dus met alleen html en daarna css kan doen. Ik heb geen javascript hoeven gebruiken om een goede gebruikers ervaring te maken.
+
+## Bronnen
+
+* Belastingdienst – Aangifte erfbelasting 2025 (PDF)
+* MDN Web Docs – HTML forms
+* MDN Web Docs – :has() CSS selector
+* MDN Web Docs – :user-invalid
+* NS Huisstijl richtlijnen (referentie voor kleurgebruik en typografie)
+* Feedback van docent Vasilus
