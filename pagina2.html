@@ -33,15 +33,17 @@
                             <!-- <p class="sectie-omschrijving">Kies een 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.</p> -->
 
                             <fieldset class="in-form">
-                                <legend>Kies een 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.</legend>
-                                <label><input type="radio" name="rol" id="rol_bsn"> BSN/RSIN gemachtigde</label>
+                                <legend>Kies een 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.*</legend>
+                                <label><input type="radio" name="rol" id="rol_bsn" required> BSN/RSIN gemachtigde</label>
                                 <label><input type="radio" name="rol" id="rol_becon"> Beconnummer adviseur</label>
                                 <label><input type="radio" name="rol" id="rol_protocol"> Protocolnummer notaris</label>
+                                <p class="error">Kies een van de drie antwoorden</p>
                             </fieldset>
 
                             <div class="input-block" id="blok_bsn">
                                 <label for="bsn_gemachtigde">BSN/RSIN gemachtigde *</label>
-                                <input type="number" id="bsn_gemachtigde">
+                                <input type="number" id="bsn_gemachtigde" pattern="[0-9]{9}">
+                                <p class="error">Vul een geldig Bsn nummer in van 9 cijfers</p>
                             </div>
 
                             <div class="input-block" id="blok_becon">
@@ -74,11 +76,13 @@
 
                         <label for="naaminstelling_gemachtigde">Naam instelling *</label>
                         <input type="text" id="naaminstelling_gemachtigde" required>
+                        <p class="error">Vul de naam in van de instelling</p>
 
                         <fieldset class="in-form">
                                 <legend>Waar is het adres van de instelling? *</legend>
-                                <label><input type="radio" name="adres" id="adres_nl"> Adres in Nederland</label>
+                                <label><input type="radio" name="adres" id="adres_nl" required> Adres in Nederland</label>
                                 <label><input type="radio" name="adres" id="adres_buitenland"> Adres in het buitenland</label>
+                                <p class="error">Kies een van de twee antwoorden</p>
                         </fieldset>
 
                         <fieldset class="extravragen4">
@@ -125,7 +129,7 @@
                         <input type="email" id="email_gemachtigde"> 
                     </fieldset>
                 
-                <button>Volgende</button>
+                <button type="submit">Volgende</button>
         </form>
     </main>
     <footer>Xavannah Baars | CMD | Hogeschool van Amsterdam</footer>

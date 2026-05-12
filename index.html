@@ -33,13 +33,13 @@
 
                         <div class="naam-overledene">
                         <label for="voornaam_overledene">Voornaam *</label>
-                        <input type="text" id="voornaam_overledene" placeholder=" " required> 
+                        <input type="text" id="voornaam_overledene" required>
 
                         <label for="tussenvoegsel_overledene">Tussenvoegsel</label>
-                        <input type="text" id="tussenvoegsel_overledene" placeholder=" "> 
+                        <input type="text" id="tussenvoegsel_overledene"> 
   
                         <label for="achternaam_overledene">Achternaam *</label>
-                        <input type="text" id="achternaam_overledene" placeholder=" " required> 
+                        <input type="text" id="achternaam_overledene" required> 
                         </div>
 
                         <div class="bsn-overledene">
@@ -59,13 +59,14 @@
 
                             <fieldset class="in-form">
                                 <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden? *</legend>
-                                <input type="radio" name="partner_overledene" value="nee" id="partner_overledene_nee">
+                                <input type="radio" name="partner_overledene" value="nee" id="partner_overledene_nee" required>
                                 <label for="partner_overledene_nee">Nee</label>
 
                                 <input type="radio" name="partner_overledene" value="ja" id="partner_overledene_ja">
                                 <label for="partner_overledene_ja">Ja</label>
 
                                 <p class="continue">Ga verder met vraag 1c</p>
+                                <p class="error">Kies een van de twee antwoorden</p>
                             </fieldset>
 
                                 <fieldset class="extravragen1">
@@ -102,12 +103,14 @@
 
                             <fieldset class="in-form">
                                 <legend>Had de overledene kinderen? *</legend>
-                                <input type="radio" name="kinderen_overledene" value="nee" id="kinderen_overledene_nee"> 
+                                <input type="radio" name="kinderen_overledene" value="nee" id="kinderen_overledene_nee" required> 
                                 <label for="kinderen_overledene_nee">Nee</label>
 
                                 <input type="radio" name="kinderen_overledene" value="ja" id="kinderen_overledene_ja"> 
                                 <label for="kinderen_overledene_ja">Ja</label>
-                                <p class="continue">Ga verder met vraag 1d</p>
+
+                                <p class="continue">Ga verder met vraag 1c</p>
+                                <p class="error">Kies een van de twee antwoorden</p>
                             </fieldset>
 
                             <fieldset class="extravragen2">
@@ -140,12 +143,14 @@
 
                             <fieldset class="in-form">
                                 <legend>Had de overledene een testament? *</legend>
-                                <input type="radio" name="testament_overledene" value="nee" id="testament_overledene_nee">
+                                <input type="radio" name="testament_overledene" value="nee" id="testament_overledene_nee" required>
                                 <label for="testament_overledene_nee">Nee</label>
 
                                 <input type="radio" name="testament_overledene" value="ja" id="testament_overledene_ja">
                                 <label for="testament_overledene_ja">Ja</label>
-                                <p class="continue">Ga verder met vraag 2</p>
+                                
+                                <p class="continue">Ga verder met vraag 1c</p>
+                                <p class="error">Kies een van de twee antwoorden</p>
                             </fieldset>
 
                             <fieldset class="extravragen3">

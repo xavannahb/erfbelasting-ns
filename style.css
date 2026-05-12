@@ -242,9 +242,9 @@ input:not([type="radio"]):user-invalid {
 }
 
 /* Specifiek voor data */
-#overlijdensdatum_overledene:user-valid {
+/* #overlijdensdatum_overledene:user-valid {
     box-shadow: 0 0 0 3px rgba(59, 109, 17, 0.13);
-}
+} */
 
 /* Error messages */
 .error {
@@ -255,7 +255,11 @@ input:not([type="radio"]):user-invalid {
     padding: 0.5rem 0;
 }
 
-input:user-invalid + .error {
+input:user-invalid + .error {  /* + = “select the immediately next sibling” */
+    display: block;
+}
+
+.in-form:has(input[type="radio"]:user-invalid) .error { /* has: is better wanneer het element er niet direct onder staat */
     display: block;
 }
 
@@ -270,7 +274,7 @@ input:user-invalid + .error {
 
 #partner_overledene_nee:checked ~ .continue, 
 #kinderen_overledene_nee:checked ~ .continue,
-#testament_overledene_nee:checked ~ .continue {  /* Gebruik niet + maar ~, want er zit een <label> tussen. */
+#testament_overledene_nee:checked ~ .continue {  /* Gebruik niet + maar ~, want er zit een <label> tussen. ~ betekend elke contine in hetzelfde parent  */
     display: block;
 }
 
