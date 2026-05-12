@@ -111,7 +111,6 @@ ul .hide-text {
 }
 
 /* Form styling */
-
 form, fieldset.extravragen1, fieldset.extravragen2, fieldset.extravragen3, fieldset.extravragen4, fieldset.extravragen5 {
     background-color: var(--achtergond-navigatie);
     border: var(--border);
@@ -240,11 +239,6 @@ input:not([type="radio"]):user-invalid {
     background: #FCEBEB;
     box-shadow: 0 0 0 3px rgba(163, 45, 45, 0.13);
 }
-
-/* Specifiek voor data */
-/* #overlijdensdatum_overledene:user-valid {
-    box-shadow: 0 0 0 3px rgba(59, 109, 17, 0.13);
-} */
 
 /* Error messages */
 .error {
